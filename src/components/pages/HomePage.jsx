@@ -41,7 +41,6 @@ class HomePage extends React.Component {
     });
     
     
-    
   }
 
   onConversionSuccess = (response) => {
@@ -68,7 +67,7 @@ class HomePage extends React.Component {
         <Block strong>
           <p>Select currencies and enter value</p>
         </Block>
-        <BlockHeader>Source Currency</BlockHeader>
+        <BlockHeader>First Currency</BlockHeader>
         <Block inner>
           <Input
             onChange={this.onInputChanged}
@@ -90,11 +89,12 @@ class HomePage extends React.Component {
           >
             {/* <Icon icon="demo-list-icon" slot="media"/> */}
             <option value="USD">(USD) United States Dollar</option>
+            <option value="EUR">(EUR) Euro</option>
             {/* <option value="EUR">(EUR) Euro</option> */}
           </Input>
         </Block>
         
-        <BlockHeader>Destination Currency</BlockHeader>
+        <BlockHeader>Second Currency</BlockHeader>
         <Block>
           <Input
             onChange={this.onInputChanged}
@@ -117,8 +117,6 @@ class HomePage extends React.Component {
             {/* <Icon icon="demo-list-icon" slot="media"/> */}
             <option value="USD">(USD) United States Dollar</option>
             <option value="EUR">(EUR) Euro</option>
-            <option value="AED">(AED) UAE Dirham</option>
-            <option value="PHP">(PHP) Philippine Peso</option>
           </Input>
         </Block>
       </Page>

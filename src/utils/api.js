@@ -3,8 +3,16 @@ import axios from 'axios';
 const API_KEY = '32f175a857a01c5aa8f1bb6eeb15cb6e';
 
 const parseAndConvert = ({ value, from, to, data }) => {
-    const source = 'USD';
+    if (from === to) return value;
+
     const quotes = data.quotes;
+    if (from === 'EUR') {
+        const rate = 1/quotes['USDEUR'];
+
+        return (value*rate).toFixed(2);
+    }
+
+    const source = 'USD';
     const key = `${from}${to}`;
 
     const rate = quotes[key];
